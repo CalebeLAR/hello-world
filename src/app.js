@@ -17,7 +17,10 @@ app.get('/search', (req, res) => {
 })
 
 // Parãmetros de rotas
-app.post('/people', (req, res) => {
+app.post('/people/:name/:age/:city', (req, res) => {
+  console.log(req.params.name)
+  console.log(req.params.age)
+  console.log(req.params.city)
   res.status(200).send('People ok!');
 })
 
