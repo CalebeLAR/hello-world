@@ -8,7 +8,7 @@ const app = express();
 // app.get('/', (req, res) => res.status(200).redirect('https://www.betrybe.com/'));
 // app.get('/', (req, res) => res.status(200).render('./index.html'));
 // app.get('/', (req, res) => res.status(200).end());
-
+app.use(express.json());
 // Query strings
 app.get('/search', (req, res) => {
   console.log(req.query.name);
@@ -26,6 +26,7 @@ app.post('/people/:name/:age/:city', (req, res) => {
 
 // Corpo de requisição
 app.post('/tasks', (req, res) => {
+  console.log(req.body)
   res.status(200).send('Tasks ok!');
 })
 
